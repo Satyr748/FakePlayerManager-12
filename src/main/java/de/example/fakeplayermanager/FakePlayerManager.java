@@ -151,15 +151,17 @@ public class FakePlayerManager implements ModInitializer {
                     continue;
                 }
 
-                // FIX: yaw and pitch must be floating-point values.
-                dummy.moveTo(
+                // Position and rotation
+                dummy.setPos(
                         task.x(),
                         task.y(),
-                        task.z(),
-                        0.0F,
-                        0.0F
+                        task.z()
                 );
 
+                dummy.setYRot(0.0F);
+                dummy.setXRot(0.0F);
+
+                // Appearance
                 dummy.setCustomName(
                         Component.literal(task.name())
                 );
